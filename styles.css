@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Ubuntu', sans-serif;
+}
+
+body {
+    font-size: 24px;
+    background-color: #d8fdeb;
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em 0em;
+    color: #170F11;
+}
+
+.calculator-cont {
+    background-color: white;
+    width: 375px;
+    border-radius: 16px;
+    padding: 1em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 45px -20px rgba(0,0,0,0.77);
+    -webkit-box-shadow: 10px 10px 45px -20px rgba(0,0,0,0.77);
+    -moz-box-shadow: 10px 10px 45px -20px rgba(0,0,0,0.77);
+}
+
+#label-totalCost, #label-numberPeople, legend {
+    display: block;
+    color: #5C164E;
+    font-weight: 900;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+.input-propina-value, .input-number-people{
+    width: 100%;
+    padding: 0.75em;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: right;
+    outline: none;
+    -webkit-appearance: none;
+    
+}
+
+.input-propina-value {
+    background: url(./images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: #f1fcf7;
+}
+
+.input-number-people {
+    background: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: #f1fcf7;
+}
+
+.error {
+    color: rgb(243, 81, 81);
+}
+
+.error::after {
+    content: "No puede ser cero.";
+    font-size: 0.75em;
+}
+
+.input-propina-value:focus, .input-number-people:focus ,.tip-percentage-input:focus {
+    border: 1px solid green;
+}
+
+.tip-percentage-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    margin-bottom: 0.75em;
+    margin-top: 0.5em;
+    padding-bottom: 0.25em;
+    border: none;
+}
+
+.tip-percentage-button {
+    background-color: #5C164E;
+    width: 147px;
+    padding: 0.25em;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.btn-selected {
+    background-color: #9B287B;
+}
+
+.tip-percentage-input {
+    padding: 0.55em;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+    background-color: #f1fcf7;
+    width: 147px;
+}
+
+.tip-percentage-input::placeholder {
+    font-size: 1.25em;
+}
+
+
+/* Resultados */
+
+.results-container {
+    background-color: #5C164E;
+    border-radius: 12px;
+    margin-top: 0.5em;
+    padding: 40px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.results-tip , .results-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    font-weight: 900;
+    color: white;
+}
+
+.results-total span, .results-tip span{
+    font-size: 0.75em;
+    font-weight: 300;
+}
+
+.btn-reset {
+    background-color: white;
+    color: #5C164E;
+    font-size: 0.9em;
+    font-weight: 900;
+    border: 2px solid #170F11;
+    padding: 0.25em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .5s ease, color .3s ease;
+}
+
+.btn-reset:hover {
+    background-color: #9B287B;
+    color: white;
+    transition: background-color .5s ease, color .3s ease;
+}
+
+
+/* Responsive */
+
+@media (min-width: 1440px){
+    .title {
+        margin: 100px 0 60px;
+    }
+
+    .calculator-cont {
+        display: flex;
+        flex-direction: row;
+        width: 900px;
+        gap: 50px;
+    }
+
+    .inputs-cont {
+        flex: 1;
+    }
+
+    .results-container {
+        flex: 1;
+    }
+
+    .tip-percentage-cont {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .tip-percentage-button, .tip-percentage-input {
+        width: 130px;
+    }
+
+    .results-tip-p, .results-total-p {
+        font-size: 1.5em;
+    }
+}
